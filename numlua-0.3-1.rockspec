@@ -52,7 +52,7 @@ build = {
       -- assume blas is in same libdir as lapack
       libdirs = {"$(FFTW3_LIBDIR)", "$(HDF5_LIBDIR)", "$(LAPACK_LIBDIR)"},
       --libraries = {"hdf5", "fftw3", "lapack", "f77blas", "atlas"},
-      libraries = {"hdf5", "fftw3", "lapack", "blas"}, -- f77 blas
+      libraries = {"hdf5", "fftw3", "lapack", "openblas"}, -- f77 blas
     },
     ["numlua.matrix"] = "matrix.lua",
     ["numlua.seeall"] = "seeall.lua",
@@ -61,7 +61,7 @@ build = {
     mingw32 = { -- assumes that libs are linked with "-l%s" format
       modules = {
         numlua = { -- needs gfortran for blas and lapack
-          libraries = {"hdf5", "fftw3", "lapack", "blas", "gfortran"}
+          libraries = {"hdf5", "fftw3", "lapack", "openblas", "gfortran"}
         }
       }
     }
