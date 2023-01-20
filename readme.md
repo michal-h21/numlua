@@ -29,6 +29,7 @@ This Fork
 This fork fixes an issue with Lua 5.3 (based on [this bug report](https://github.com/carvalho/numlua/issues/5),
 and it also uses OpenBlas instad of Blas.
 
+
 Documentation
 -------------
 
@@ -36,6 +37,8 @@ The documentation for Numeric Lua can be found in the distribution in two
 formats: _html_ in `docs` and "Lua help pages" (_lhp_). Lua help pages are
 viewed in the interpreter and are thus more suitable for quick on-line
 reference checks --- similar to man pages --- but they require `luahelp`.
+
+It is also available [here](https://www.kodymirus.cz/numlua/).
 
 
 Installation
