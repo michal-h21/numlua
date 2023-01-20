@@ -23,6 +23,11 @@ check `numlua.seeall` for a quick way to start using Numeric Lua.
 Numeric Lua is licensed under the same license as Lua -- the MIT license --
 and so can be freely used for academic and commercial purposes.
 
+This Fork
+---------
+
+This fork fixes an issue with Lua 5.3 (based on [this bug report](https://github.com/carvalho/numlua/issues/5),
+and it also uses OpenBlas instad of Blas.
 
 Documentation
 -------------
@@ -50,14 +55,20 @@ Building Numeric Lua in `luarocks` should be straightforward and mostly
 requires specifying include and lib dirs for the dependencies. In
 Debian/Ubuntu systems, for example, you would typically just need to issue
 
-      $ sudo apt-get install libblas-dev liblapack-dev libfftw3-dev libhdf5-serial-dev
-      $ luarocks make numlua-0.3-1.rockspec
+    $ sudo apt-get install libblas-dev liblapack-dev libfftw3-dev libhdf5-serial-dev
+    $ luarocks make numlua-0.3-1.rockspec
 
 since the dirs happen to be system defaults. Similarly, on Mac OS X using
 `fink`,
 
-        $ fink install atlas fftw3 hdf5
-        $ luarocks HDF5_DIR=/sw FFTW3_DIR=/sw LAPACK=/sw make numlua-0.3-1.rockspec
+    $ fink install atlas fftw3 hdf5
+    $ luarocks HDF5_DIR=/sw FFTW3_DIR=/sw LAPACK=/sw make numlua-0.3-1.rockspec
+
+On Fedora, we can use this command:
+
+    $  sudo dnf install lapack-devel hdf5-devel fftw-devel openblas-devel
+    $ luarocks make numlua-0.3-1.rockspec
+
 
 Note that ATLAS optimized libraries are being used here, instead of the
 vanilla BLAS/LAPACK (a similar package exists in `apt`.) In this case, you
