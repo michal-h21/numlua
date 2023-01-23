@@ -27,7 +27,7 @@ This Fork
 ---------
 
 This fork fixes an issue with Lua 5.3 (based on [this bug report](https://github.com/carvalho/numlua/issues/5),
-and it also uses OpenBlas instad of Blas.
+and it also uses OpenBLAS instad of BLAS.
 
 
 Documentation
@@ -45,7 +45,7 @@ Installation
 ------------
 
 Numeric Lua depends on
-[BLAS/LAPACK](http://www.netlib.org/lapack "BLAS/LAPACK"),
+[OpenBLAS/LAPACK](https://www.openblas.net/),
 [FFTW](http://www.fftw.org "FFTW"), and
 [HDF5](http://www.hdfgroup.org/HDF5 "HDF5"). These external dependencies are
 more easily and conveniently handled by package managers in Linux (`apt` and
@@ -58,7 +58,7 @@ Building Numeric Lua in `luarocks` should be straightforward and mostly
 requires specifying include and lib dirs for the dependencies. In
 Debian/Ubuntu systems, for example, you would typically just need to issue
 
-    $ sudo apt-get install libblas-dev liblapack-dev libfftw3-dev libhdf5-serial-dev
+    $ sudo apt-get install libopenblas-dev liblapack-dev libfftw3-dev libhdf5-serial-dev
     $ luarocks make numlua-0.3-1.rockspec
 
 since the dirs happen to be system defaults. Similarly, on Mac OS X using
